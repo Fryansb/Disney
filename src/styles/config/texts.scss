@@ -1,0 +1,35 @@
+@use "./config/variaveis" as *;
+
+@mixin text($fontSize: 12px) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  color: $silver;
+}
+
+@mixin title($fontSize: 28px) {
+  @include text($fontSize);
+  color: $white;
+}
+
+@mixin tabText($fontSize: 20px) {
+  @include text($fontSize);
+  color: $white;
+  text-transform: uppercase;
+}
+
+@mixin buttonText($fontSize: 18px) {
+  @include text($fontSize);
+  color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@mixin faqText($fontSize: 20px) {
+  @include text($fontSize);
+  color: $pureWhite;
+}
+
+@mixin linkText() {
+  color: $white;
+  text-decoration: underline $white;
+}

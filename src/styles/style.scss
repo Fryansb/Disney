@@ -1,0 +1,71 @@
+@use "config/reset" as *;
+@use "config/variaveis" as *;
+@use "config/texts" as *;
+@use "components/Hero";
+@use "components/Shows";
+@use "components/Plans";
+@use "config/image-text-layout";
+@use "components/Devices";
+@use "components/Faq";
+@use "components/Footer";
+@use "components/Header";
+
+//todo Body
+body {
+    background-color: $backgroundColor;
+}
+
+//todo Textos
+
+.text--small {
+    @include text;
+
+    @media(max-width: $mobile) {
+        @include text(11px);
+    }
+}
+
+.text {
+    @include text(16px);
+
+    @media(max-width: $mobile) {
+        @include text(14px);
+    }
+}
+
+.text--big {
+    @include text(18px);
+
+    @media(max-width: $mobile) {
+        @include text(15px);
+    }
+}
+
+.title--small {
+    @include title;
+
+    @media (max-width: $mobile) {
+        @include title(22px);
+    }
+}
+
+.title {
+    @include title(40px);
+
+    @media(max-width: $mobile) {
+        @include title(24px);
+    }
+}
+
+.title--big {
+    @include title(44px);
+
+    @media (max-width: $mobile) {
+        @include title(26px);
+    }
+}
+
+.link--text {
+    @include text(18px);
+    color: $white;
+}

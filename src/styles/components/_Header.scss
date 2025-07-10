@@ -1,0 +1,70 @@
+@use "ui/button" as *;
+@use "../config/variaveis" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  transition: .5s;
+  z-index: 1000;
+
+  &--scrolled {
+    backdrop-filter: blur(3px) brightness(20%);
+    box-shadow: 0 2px 30px 15px rgba(0, 0, 0, 0.6);
+  
+    .header {
+      &__logo, &__links__item:first-child a {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+
+    @media (max-width: $mobile) {
+      padding: 0 12px 0 20px;
+    }
+  }
+
+  &__logo {
+    opacity: 0;
+    max-width: 80px;
+    width: 100%;
+    margin: 5px;
+    transition: .3s;
+
+    @media (max-width: $mobile) {
+      max-width: 64px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+
+    &__item {
+      margin: 5px;
+      list-style: none;
+
+      a {
+        @extend .link-button;
+      }
+
+      &:nth-child(1) a {
+        opacity: 0;
+        transition: .3s;
+        visibility: hidden;
+        @include secondaryButton;
+      }
+
+      &:nth-child(2) a {
+        @include darkButton;
+      }
+    }
+  }
+}
+

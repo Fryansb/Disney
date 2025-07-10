@@ -1,0 +1,61 @@
+@use "ui/button" as *;
+@use "../config/variaveis" as *;
+
+.plans {
+  padding: 5.6vw;
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin-top: 50px;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__item {
+      text-align: center;
+      padding: 60px 0px 44px;
+      max-width: 380px;
+      width: 100%;
+
+      &:nth-child(2) {
+        background-image: url(/dist/images/fundo_combo_plus.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &__img {
+        width: 100%;
+      }
+
+      &__p {
+        max-width: 280px;
+        width: 100%;
+        display: inline-block;
+      }
+
+      &__price {
+        display: block;
+      }
+
+      &__button {
+        @include primaryButton;
+        margin-top: 24px;
+        margin-bottom: 8px;
+        display: inline;
+        max-width: 280px;
+      }
+    }
+  }
+
+  &__choose {
+    text-align: center;
+  }
+
+  &__disclaimer {
+    text-align: center;
+  }
+}

@@ -1,0 +1,51 @@
+@use "./variaveis" as *;
+
+.image-text-section {
+    padding: 5.6vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    position: relative;
+
+    @media (max-width: $mobile) {
+    display: block;
+    }
+
+    &--image-full-width {
+        display: block;
+
+        &__content {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            width: calc(50% - 5.6vw);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width: $mobile) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        &-img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    &__content {
+        padding: 0 2vw;
+
+        &__title {
+            margin-bottom: 24px;
+        }
+    }
+
+    &-img {
+        max-width: 100%;
+    }
+}
